@@ -20,7 +20,7 @@ require('./example');
 $(document).ready(handlers.addHandlers);
 
 $(() => {
-  // $('.albums').on('submit', albumEvents.onGetAlbum)
-  // $('.delete-album').on('submit', albumEvents.onDeleteAlbum)
+  $('.albums').on('submit', albumEvents.onShowAlbum);
+  $('.delete-album').on('submit', albumEvents.onDeleteAlbum)
   $('.create-album').on('submit', albumEvents.onCreateAlbum);
 });

@@ -2,10 +2,11 @@
 
 
 const showAlbums = function (data) {
-
+  console.log(data);
 };
 
 const showAlbum = function (data) {
+  console.log(data);
 };
 
 const showSuccess = function () {
