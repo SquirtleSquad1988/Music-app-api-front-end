@@ -44,14 +44,14 @@ const destroyAlbum = function(id){
   });
 };
 
-const updateAlbum = function(data){
+const updateAlbum = function(id, data) {
   return $.ajax({
-    url: config.apiOrigin + '/albums/' + data.album.id,
+    url: config.apiOrigin + '/albums/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
-    data,
-  }
+  },
+  data
 });
 };
 

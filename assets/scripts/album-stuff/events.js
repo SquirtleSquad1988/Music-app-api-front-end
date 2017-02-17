@@ -44,15 +44,14 @@ const onDeleteAlbum = function(event){
 
 const onUpdateAlbum = function(event){
   event.preventDefault();
-
   let data = getFormFields(event.target);
-  api.albumUpdate(data)
-    .then(booksUi.onUpdateSuccess)
-    .catch(booksUi.onError);
+  api.updateAlbum(data.album.id, data)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onError);
 };
 
 module.exports = {
-  // onUpdateBook,
+  onUpdateAlbum,
   onCreateAlbum,
   onShowAlbum,
   onDeleteAlbum
