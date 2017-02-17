@@ -3,6 +3,9 @@
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const handlers = require('./auth/events');
+const albumEvents = require('./album-stuff/events');
+
+
 
 $(() => {
   setAPIOrigin(location, config);
@@ -15,3 +18,9 @@ $(() => {
 require('./example');
 
 $(document).ready(handlers.addHandlers);
+
+$(() => {
+  // $('.albums').on('submit', albumEvents.onGetAlbum)
+  // $('.delete-album').on('submit', albumEvents.onDeleteAlbum)
+  $('.create-album').on('submit', albumEvents.onCreateAlbum);
+});
