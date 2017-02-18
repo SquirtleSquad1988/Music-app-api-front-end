@@ -1,0 +1,27 @@
+{{#each albums as |album|}}
+
+
+  <!-- ^ runs code in partial.handlebaRs file each time loop is run -->
+  <!-- Note how this file and partial file are in the same folder -->
+  {{log  this}}
+  <!-- ^ works like a console.log, will print this to console -->
+ <!-- Developers, why are we using data-id and not just id? -->
+  <!-- <h1 data-id="{{book.id}}"> <small>Title: {{book.title}}</small></h1>
+  <div>
+    {{#if book.description}}
+      {{book.description}}
+    {{else}}
+      No description.
+    {{/if}}
+  </div> -->
+
+  <ul data-id="{{album.id}}">
+    <li><small>Title: {{album.album_name}}</small></li>
+      {{#if album.artist_name}}
+        {{album.album_name}}
+      {{else}}
+        No description.
+      {{/if}}
+      <li><button type="button" name="button">Remove</button></li>
+    </ul>
+{{/each}}
