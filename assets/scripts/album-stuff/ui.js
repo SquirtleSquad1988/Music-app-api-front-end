@@ -1,4 +1,5 @@
 'use strict';
+const albumEvents = require('./events');
 
 const showAlbumsTemplate = require('../templates/album-listing.handlebars');
 
@@ -9,7 +10,14 @@ const showAlbums = function (data) {
 // of the template showBooksTemplate and the data.books objects
 let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
 // selects the content element and appends new HTML into it
+$('.content').empty();
 $('.content').append(showAlbumsHtml);
+$("#content").on("click", "button", function (e) {
+  e.preventDefault();
+  $(e.target).parent().parent().remove();
+});
+// $('.delete-album').on('submit', albumEvents.onDeleteAlbum);
+
 };
 
 const showAlbum = function (data) {

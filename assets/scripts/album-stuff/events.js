@@ -28,9 +28,7 @@ const onShowAlbum = function (event) {
     .catch(ui.onShowError);
   }
 };
-//
-//
-//
+
 const onDeleteAlbum = function(event){
   event.preventDefault();
   // let bookId = $('#delete-book-id').val();

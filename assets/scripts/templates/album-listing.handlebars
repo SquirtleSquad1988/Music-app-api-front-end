@@ -16,12 +16,13 @@
   </div> -->
 
   <ul data-id="{{album.id}}">
-    <li><small>Title: {{album.album_name}}</small></li>
-      {{#if album.artist_name}}
+    {{album.id}}
+    <li><small>Title: {{album.artist_name}}</small></li>
+      {{#if album.album_name}}
         {{album.album_name}}
       {{else}}
         No description.
       {{/if}}
-      <li><button type="button" name="button">Remove</button></li>
+      <li><button type="button" name="button" class="remove-album">Remove</button></li>
     </ul>
 {{/each}}
