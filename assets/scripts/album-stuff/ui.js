@@ -12,10 +12,11 @@ const showAlbums = function (data) {
 let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
 // selects the content element and appends new HTML into it
 $('.content').empty();
-$('.content').append(showAlbumsHtml);
+$('.content').append(showAlbumsHtml).hide().fadeIn();
 $("#content").on("click", ".del-album", function (e) {
   e.preventDefault();
-  $(e.target).parent().parent().remove();
+  let albumDescription = $(e.target).parent().parent();
+  albumDescription.fadeOut();
   });
 };
 
@@ -36,8 +37,8 @@ const onPatchSuccess = function () {
 
 };
 
-const onPostSuccess = function (data) {
-  $('.winner').text('You are now playing game id: ' + data);
+const onPostSuccess = function () {
+  $(".show-all-albums").click();
 
 };
 

@@ -11,6 +11,7 @@ const signInSuccess = () => {
   $('.credential-status').text('Click New Game to Begin');
   $('#sign-out').show();
   $('.sign-in-modal').modal('hide');
+  $(".show-all-albums").click();
 };
 
 const signInFailure = () => {
@@ -52,6 +53,7 @@ const signOutSuccess = () => {
   $('.credential-status').text('Please Sign In or Sign Up!');
   $('.winner').text('');
   $('#sign-out').hide();
+  $('.content').fadeOut();
 };
 
 module.exports = {
