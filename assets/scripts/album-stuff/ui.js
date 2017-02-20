@@ -8,7 +8,7 @@ const showAlbums = function (data) {
   console.log(data);
 
 // showBooksHTML is a string of HTML that is made up
-// of the template showBooksTemplate and the data.books objects
+// of the template showBooksTemplate and the data.albums objects
 let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
 // selects the content element and appends new HTML into it
 $('.content').empty();
@@ -46,7 +46,7 @@ const onError = function () {
 };
 
 const onUpdateSuccess = function () {
-
+  $(".show-all-albums").click();
 };
 
 

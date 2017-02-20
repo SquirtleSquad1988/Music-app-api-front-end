@@ -39,6 +39,7 @@ const onUpdateAlbum = function(event){
   api.updateAlbum(+$(this).data('id'), info)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
+
 };
 
 module.exports = {
