@@ -17,16 +17,9 @@ const onCreateAlbum = function (event) {
 
 const onShowAlbum = function (event) {
   event.preventDefault();
-  let albumId = $('#album-id').val();
-  if (albumId.length === 0) {
     api.showAlbums()
     .then(ui.showAlbums)
     .catch(ui.onShowError);
-  } else {
-    api.showAlbum(albumId)
-    .then(ui.showAlbum)
-    .catch(ui.onShowError);
-  }
 };
 
 const onDeleteAlbum = function(event){
@@ -41,8 +34,9 @@ const onDeleteAlbum = function(event){
 
 const onUpdateAlbum = function(event){
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.updateAlbum(data.album.id, data)
+  let info = getFormFields(event.target);
+  console.log(+$(this).data('id'));
+  api.updateAlbum(+$(this).data('id'), info)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
 };
@@ -51,5 +45,5 @@ module.exports = {
   onUpdateAlbum,
   onCreateAlbum,
   onShowAlbum,
-  onDeleteAlbum
+  onDeleteAlbum,
 };

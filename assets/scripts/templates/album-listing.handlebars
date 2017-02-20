@@ -17,15 +17,22 @@
 
   <ul data-id="{{album.id}}">
     {{album.id}}
-    <li><small>Title: {{album.artist_name}}</small></li>
+    <li>Artist: {{album.artist_name}}</li>
       {{#if album.album_name}}
-        {{album.album_name}}
+        <small>Album: {{album.album_name}}</small>
       {{else}}
         No description.
       {{/if}}
       <li>
-        <form>
-          <button type="submit" data-id="{{album.id}}">Remove</button>
+        <button type="submit" data-id="{{album.id}}" class="del-album">Remove</button>
+      </li>
+      <li>
+        <form class='update-album' data-id="{{album.id}}">
+          <div class="form-group">
+            <input type="text" name="album[artist_name]" id="artist-name" placeholder="Artist Name">
+            <input type="text" name="album[album_name]" id="album-name" placeholder="Album Name">
+          </div>
+          <button type="submit" class="btn btn-default refresh" data-id="{{album.id}}">Update Album</button>
         </form>
       </li>
     </ul>

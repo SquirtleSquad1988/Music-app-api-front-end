@@ -13,9 +13,9 @@ let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
 // selects the content element and appends new HTML into it
 $('.content').empty();
 $('.content').append(showAlbumsHtml);
-$("#content").on("click", "button", function (e) {
+$("#content").on("click", ".del-album", function (e) {
   e.preventDefault();
-  $(e.target).parent().parent().parent().remove();
+  $(e.target).parent().parent().remove();
   });
 };
 
@@ -33,6 +33,7 @@ const onShowError = function () {
 
 const onPatchSuccess = function () {
 
+
 };
 
 const onPostSuccess = function (data) {
@@ -41,6 +42,10 @@ const onPostSuccess = function (data) {
 };
 
 const onError = function () {
+
+};
+
+const onUpdateSuccess = function () {
 
 };
 
@@ -53,5 +58,6 @@ module.exports = {
   onPatchSuccess,
   onPostSuccess,
   showSuccess,
-  onShowError
+  onShowError,
+  onUpdateSuccess
 };

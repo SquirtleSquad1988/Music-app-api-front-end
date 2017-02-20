@@ -21,8 +21,9 @@ $(document).ready(handlers.addHandlers);
 
 $(() => {
   $('.albums').on('submit', albumEvents.onShowAlbum);
-  $('.remove-album').on('click', albumEvents.onDeleteAlbum);
   $('.create-album').on('submit', albumEvents.onCreateAlbum);
   $('.update-album').on('submit', albumEvents.onUpdateAlbum);
-  $("#content").on("click", "button", albumEvents.onDeleteAlbum);
+  $("#content").on("click", ".del-album", albumEvents.onDeleteAlbum);
+  $("#content").on("submit", ".update-album", albumEvents.onUpdateAlbum);
+  // $("#content").on("click", ".refresh", albumEvents.onShowAlbum);
 });
