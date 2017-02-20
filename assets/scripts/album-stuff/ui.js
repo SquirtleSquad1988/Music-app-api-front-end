@@ -4,6 +4,7 @@ const albumEvents = require('./events');
 const showAlbumsTemplate = require('../templates/album-listing.handlebars');
 
 const showAlbums = function (data) {
+
   console.log(data);
 
 // showBooksHTML is a string of HTML that is made up
@@ -14,10 +15,8 @@ $('.content').empty();
 $('.content').append(showAlbumsHtml);
 $("#content").on("click", "button", function (e) {
   e.preventDefault();
-  $(e.target).parent().parent().remove();
-});
-// $('.delete-album').on('submit', albumEvents.onDeleteAlbum);
-
+  $(e.target).parent().parent().parent().remove();
+  });
 };
 
 const showAlbum = function (data) {

@@ -23,6 +23,10 @@
       {{else}}
         No description.
       {{/if}}
-      <li><button type="button" name="button" class="remove-album">Remove</button></li>
+      <li>
+        <form>
+          <button type="submit" data-id="{{album.id}}">Remove</button>
+        </form>
+      </li>
     </ul>
 {{/each}}
