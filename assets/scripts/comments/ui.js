@@ -1,23 +1,20 @@
 'use strict';
-const albumEvents = require('./events');
 
-const showCommentsTemplate = require('../templates/album-listing.handlebars');
+const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showComments = function (data) {
 
-  console.log(data);
-
 // showBooksHTML is a string of HTML that is made up
 // of the template showBooksTemplate and the data.albums objects
-let showCommentsHtml = showCommentsTemplate({ albums: data.albums });
+let showCommentsHtml = showCommentsTemplate({ comments: data.comment });
 // selects the content element and appends new HTML into it
-$('.content').empty();
-$('.content').append(showCommentsHtml).hide().fadeIn();
-$("#content").on("click", ".del-album", function (e) {
-  e.preventDefault();
-  let albumDescription = $(e.target).parent().parent();
-  albumDescription.fadeOut();
-  });
+
+$('h1').append(showCommentsHtml);
+// $("#content").on("click", ".del-album", function (e) {
+//   e.preventDefault();
+//   let albumDescription = $(e.target).parent().parent();
+//   albumDescription.fadeOut();
+//   });
 };
 
 const showComment = function (data) {

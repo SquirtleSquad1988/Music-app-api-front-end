@@ -1,11 +1,12 @@
 'use strict';
-const albumEvents = require('./events');
 
+// const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 const showAlbumsTemplate = require('../templates/album-listing.handlebars');
 
 const showAlbums = function (data) {
+  // selects the content element and appends new HTML into i
 
-  console.log(data);
+console.log(data);
 
 // showBooksHTML is a string of HTML that is made up
 // of the template showBooksTemplate and the data.albums objects
