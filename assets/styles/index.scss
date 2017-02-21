@@ -5,3 +5,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background-color: #bf381a;
   color: white;
 }
+
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+.hide {
+  display: none;
+}

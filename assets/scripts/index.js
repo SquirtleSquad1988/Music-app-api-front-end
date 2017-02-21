@@ -17,6 +17,13 @@ require('./example');
 $(document).ready(handlers.addHandlers);
 
 $(() => {
+  $('.exit').on('click', function () {
+    console.log('click');
+    $('#sign-out').submit();
+  });
+});
+
+$(() => {
   $('.albums').on('submit', albumEvents.onShowAlbum);
   $('.create-album').on('submit', albumEvents.onCreateAlbum);
   $('.update-album').on('submit', albumEvents.onUpdateAlbum);
@@ -24,4 +31,5 @@ $(() => {
   $("#content").on("submit", ".update-album", albumEvents.onUpdateAlbum);
   $('.create-comment').on('submit', commentEvents.onCreateComment);
   $('#content').on('submit', '.create-comment', commentEvents.onCreateComment);
+
 });

@@ -4,7 +4,6 @@
 
 const signInSuccess = () => {
   $('.log').text('Click New Game to Begin');
-  $('button').removeClass('hide');
   $('.new').show();
   $('#game-search').show();
   $('#game-id').show();
