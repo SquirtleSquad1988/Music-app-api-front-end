@@ -35,11 +35,9 @@ const onDeleteAlbum = function(event){
 const onUpdateAlbum = function(event){
   event.preventDefault();
   let info = getFormFields(event.target);
-  console.log(+$(this).data('id'));
   api.updateAlbum(+$(this).data('id'), info)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
-
 };
 
 module.exports = {

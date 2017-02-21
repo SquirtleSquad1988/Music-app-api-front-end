@@ -2,8 +2,20 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 .del-album {
-  background-color: #bf381a;
-  color: white;
+  color: red;
+  float: right;
+}
+
+.album-item {
+  display: block;
+  position: relative;
+  left: 0px;
+  margin: 0 auto;
+  height: 200px;
+  width: 50.1%;
+  border: 1px #000000;
+  padding: 20px 0 0;
+  float: left;
 }
 
 body {
