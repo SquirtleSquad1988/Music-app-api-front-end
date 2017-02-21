@@ -18,9 +18,19 @@ $(document).ready(handlers.addHandlers);
 
 $(() => {
   $('.exit').on('click', function () {
-    console.log('click');
     $('#sign-out').submit();
   });
+  $("#content").on("click", ".edit-album", function (e) {
+    let where = $(e.target).parent().parent().find('.update-album');
+    where.toggleClass('hide');
+    console.log(where);
+  });
+  $("#content").on("click", ".comment-album", function (e) {
+    let where = $(e.target).parent().parent().find('.create-comment');
+    console.log(where);
+    where.toggleClass('hide');
+  });
+
 });
 
 $(() => {

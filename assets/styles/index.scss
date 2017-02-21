@@ -1,9 +1,21 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.album-edits {
+  float: right;
+}
+
 .del-album {
   color: red;
-  float: right;
+}
+
+.fields {
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  border: 1px #000000;
+  border-style: none;
+  border-radius: 26px 26px 26px 26px;
 }
 
 .album-item {

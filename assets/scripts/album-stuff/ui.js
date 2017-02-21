@@ -15,7 +15,7 @@ $('.content').empty();
 $('.content').append(showAlbumsHtml).hide().fadeIn();
 $("#content").on("click", ".del-album", function (e) {
   e.preventDefault();
-  let albumDescription = $(e.target).parent().parent();
+  let albumDescription = $(e.target).parent().parent().parent();
   albumDescription.fadeOut();
   });
 };
