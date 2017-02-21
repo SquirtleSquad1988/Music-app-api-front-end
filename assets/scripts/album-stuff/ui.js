@@ -39,6 +39,7 @@ const onPatchSuccess = function () {
 
 const onPostSuccess = function () {
   $(".show-all-albums").click();
+  $('.create-album-modal').modal('hide');
 
 };
 
