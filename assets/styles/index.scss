@@ -19,13 +19,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .album-item {
+  border: 1px black;
   display: block;
-  position: relative;
   left: 0px;
   margin: 0 auto;
   height: 200px;
   width: 50.1%;
-  border: 1px #000000;
+  border-style: solid;
   padding: 20px 0 0;
   float: left;
 }
