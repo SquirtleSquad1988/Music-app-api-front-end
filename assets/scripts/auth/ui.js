@@ -12,6 +12,7 @@ const signInSuccess = () => {
   $('#change-password-dropdown').show();
   $('.sign-in-modal').modal('hide');
   $(".show-all-albums").click();
+  $('.create-new-album').show();
 };
 
 const signInFailure = () => {
@@ -47,8 +48,10 @@ const signOutSuccess = () => {
   $('.content').fadeOut();
   $('#change-password-dropdown').hide();
   $('#exit').hide();
+  $('.create-new-album').hide();
   $('#sign-in-dropdown').show();
   $('#sign-up-dropdown').show();
+
 };
 
 module.exports = {

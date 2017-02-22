@@ -12,6 +12,7 @@ $(() => {
   setAPIOrigin(location, config);
   $('#change-password-dropdown').hide();
   $('#exit').hide();
+  $('.create-new-album').hide();
 });
 
 require('./example');

@@ -19,6 +19,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   float: left
 }
 
+ul {
+  margin: 3px;
+}
+
 .hide-album-comments {
   float: right;
 }
@@ -29,6 +33,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 100%;
   border: 1px #000000;
   border-style: none;
+  overflow: scroll;
 }
 
 .comments {
