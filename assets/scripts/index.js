@@ -10,6 +10,8 @@ const commentEvents = require('./comments/events');
 
 $(() => {
   setAPIOrigin(location, config);
+  $('#change-password-dropdown').hide();
+  $('#exit').hide();
 });
 
 require('./example');
@@ -18,7 +20,7 @@ $(document).ready(handlers.addHandlers);
 
 $(() => {
   $(".hide-album-comments").hide();
-  $('.exit').on('click', function () {
+  $('#exit').on('click', function () {
     $('#sign-out').submit();
   });
   $("#content").on("click", ".edit-album", function (e) {

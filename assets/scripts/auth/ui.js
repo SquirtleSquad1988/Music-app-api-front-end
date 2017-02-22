@@ -5,10 +5,11 @@
 const signInSuccess = () => {
   $('.log').text('Click New Game to Begin');
   $('.new').show();
-  $('#game-search').show();
-  $('#game-id').show();
   $('.credential-status').text('Click New Game to Begin');
-  $('#sign-out').show();
+  $('#sign-in-dropdown').hide();
+  $('#sign-up-dropdown').hide();
+  $('#exit').show();
+  $('#change-password-dropdown').show();
   $('.sign-in-modal').modal('hide');
   $(".show-all-albums").click();
 };
@@ -22,8 +23,6 @@ const signUpSuccess = () => {
     $('.log').text('Welcome! Please Sign In!');
     $('.credential-status').text('Welcome! Please Sign In!');
     $('.sign-up-modal').modal('hide');
-    // close modal
-    // $('.modalTarget').modal('hide')
 };
 
 const signUpFailure = () => {
@@ -44,15 +43,12 @@ const passwordChangeFailure = () => {
 
 const signOutSuccess = () => {
   $('.log').text('Successfully Signed Out. Sign In to Play Again!');
-  $('.new').hide();
-  $('#game-search').hide();
-  $('#game-id').hide();
-  $('.square').hide();
-  $('.game-board').hide();
   $('.credential-status').text('Please Sign In or Sign Up!');
-  $('.winner').text('');
-  $('#sign-out').hide();
   $('.content').fadeOut();
+  $('#change-password-dropdown').hide();
+  $('#exit').hide();
+  $('#sign-in-dropdown').show();
+  $('#sign-up-dropdown').show();
 };
 
 module.exports = {
