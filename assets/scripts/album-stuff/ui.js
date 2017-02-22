@@ -31,14 +31,12 @@ console.log(data);
 const onShowAlbumComments = function (data) {
   let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
   // selects the content element and appends new HTML into it
-  console.log(data);
   // $("#content").on("click", ".comments", function (e) {
   //   let where = $(e.target).parent();
   //   console.log(where);
   //   where.append(showCommentsHtml);
   //   });
   let current = data.comments[0].album_id;
-  console.log(current);
   $(".fields[data-id='" + current +"']").append(showCommentsHtml);
 };
 
