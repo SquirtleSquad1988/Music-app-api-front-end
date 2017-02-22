@@ -40,7 +40,7 @@ $(() => {
   $("#content").on("click", ".del-album", albumEvents.onDeleteAlbum);
   $("#content").on("submit", ".update-album", albumEvents.onUpdateAlbum);
   $('.create-comment').on('submit', commentEvents.onCreateComment);
-  // $('#content').on('submit', '.create-comment', commentEvents.onShowComment);
+  // $('.comments').on('submit', commentEvents.onShowComment);
   $('#content').on('submit', '.create-comment', commentEvents.onCreateComment);
-
+  $('#content').on('submit', '.comments', albumEvents.onShowAlbumComments);
 });

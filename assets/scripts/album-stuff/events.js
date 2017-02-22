@@ -22,6 +22,13 @@ const onShowAlbum = function (event) {
     .catch(ui.onShowError);
 };
 
+const onShowAlbumComments = function (event) {
+  event.preventDefault();
+    api.showAlbumComments(+$(this).data('id'))
+    .then(ui.onShowAlbumComments)
+    .catch(ui.onShowError);
+};
+
 const onDeleteAlbum = function(event){
   event.preventDefault();
   // let bookId = $('#delete-book-id').val();
@@ -45,4 +52,5 @@ module.exports = {
   onCreateAlbum,
   onShowAlbum,
   onDeleteAlbum,
+  onShowAlbumComments
 };

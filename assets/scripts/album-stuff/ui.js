@@ -2,6 +2,7 @@
 
 // const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 const showAlbumsTemplate = require('../templates/album-listing.handlebars');
+const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showAlbums = function (data) {
   // selects the content element and appends new HTML into i
@@ -10,15 +11,35 @@ console.log(data);
 
 // showBooksHTML is a string of HTML that is made up
 // of the template showBooksTemplate and the data.albums objects
-let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
-// selects the content element and appends new HTML into it
-$('.content').empty();
-$('.content').append(showAlbumsHtml).hide().fadeIn();
-$("#content").on("click", ".del-album", function (e) {
-  e.preventDefault();
-  let albumDescription = $(e.target).parent().parent().parent();
-  albumDescription.fadeOut();
-  });
+  // let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
+  let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
+  // selects the content element and appends new HTML into it
+  $('.content').empty();
+  $('.content').append(showAlbumsHtml).hide().fadeIn();
+  $("#content").on("click", ".del-album", function (e) {
+    e.preventDefault();
+    let albumDescription = $(e.target).parent().parent().parent();
+    albumDescription.fadeOut();
+    });
+  // $("#content").on("submit", ".comments", function (e) {
+  //   let where = $(e.target).parent();
+  //   console.log(where);
+  //   where.append(showCommentsHtml);
+  //   });
+};
+
+const onShowAlbumComments = function (data) {
+  let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
+  // selects the content element and appends new HTML into it
+  console.log(data);
+  // $("#content").on("click", ".comments", function (e) {
+  //   let where = $(e.target).parent();
+  //   console.log(where);
+  //   where.append(showCommentsHtml);
+  //   });
+  let current = data.comments[0].album_id;
+  console.log(current);
+  $(".fields[data-id='" + current +"']").append(showCommentsHtml);
 };
 
 const showAlbum = function (data) {
@@ -62,5 +83,6 @@ module.exports = {
   onPostSuccess,
   showSuccess,
   onShowError,
-  onUpdateSuccess
+  onUpdateSuccess,
+  onShowAlbumComments
 };

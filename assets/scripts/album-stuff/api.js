@@ -34,6 +34,16 @@ const showAlbum = function (id) {
   });
 };
 
+const showAlbumComments = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/albums/' + id + '/comments/',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    method: 'GET',
+  });
+};
+
 const destroyAlbum = function(id){
   return $.ajax({
     url: config.apiOrigin + '/albums/' + id,
@@ -60,5 +70,6 @@ module.exports = {
   showAlbum,
   showAlbums,
   destroyAlbum,
-  updateAlbum
+  updateAlbum,
+  showAlbumComments
 };

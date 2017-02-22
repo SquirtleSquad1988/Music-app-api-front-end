@@ -3,13 +3,12 @@
 const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showComments = function (data) {
-
 // showBooksHTML is a string of HTML that is made up
 // of the template showBooksTemplate and the data.albums objects
-let showCommentsHtml = showCommentsTemplate({ comments: data.comment });
+let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
 // selects the content element and appends new HTML into it
-
-$('h1').append(showCommentsHtml);
+console.log(data);
+$('.test').append(showCommentsHtml);
 // $("#content").on("click", ".del-album", function (e) {
 //   e.preventDefault();
 //   let albumDescription = $(e.target).parent().parent();
