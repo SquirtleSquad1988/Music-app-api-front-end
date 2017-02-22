@@ -13,6 +13,7 @@ $(() => {
   $('#change-password-dropdown').hide();
   $('#exit').hide();
   $('.create-new-album').hide();
+  $('.log').text('Sign In or Sign Up');
 });
 
 require('./example');

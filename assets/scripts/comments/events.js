@@ -12,7 +12,7 @@ const onCreateComment = function (event) {
   .then((response) => {
     store.album = response.album;
     ui.onPostSuccess(response.album);
-  });
+  }).catch(ui.onCreateError);
 };
 
 const onShowComment = function (event) {

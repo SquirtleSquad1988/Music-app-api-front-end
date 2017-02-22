@@ -5,13 +5,29 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   float: right;
 }
 
+h1 {
+  text-align: center;
+}
+
 .del-album {
   color: red;
+}
+
+.log {
+  text-align: center;
+  height: 80px;
+  width: 400px;
+  border: 1px #000000;
+  display: block;
+  padding: 10px 0 50px 0;
+  margin: 0 auto;
+  font-size: 20px;
 }
 
 .album-info {
   height: 50px;
   width: 100%;
+  overflow: scroll;
 }
 
 .deets {
@@ -36,6 +52,15 @@ ul {
   overflow: scroll;
 }
 
+.credential-status {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  width: 500px;
+  border: 1px #000000;
+  padding: 20px 0 0;
+}
+
 .comments {
   float: right;
 }
@@ -46,7 +71,7 @@ ul {
   left: 0px;
   margin: 0 auto;
   height: 200px;
-  width: 50.1%;
+  width: 30%;
   border-style: solid;
   padding: 0px;
   float: left;

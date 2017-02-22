@@ -1,27 +1,11 @@
 'use strict';
 
-const showCommentsTemplate = require('../templates/comment-listing.handlebars');
-
 const showComments = function () {
-// showBooksHTML is a string of HTML that is made up
-// of the template showBooksTemplate and the data.albums objects
-// $("#content").on("click", ".del-album", function (e) {
-//   e.preventDefault();
-//   let albumDescription = $(e.target).parent().parent();
-//   albumDescription.fadeOut();
-//   });
+  // this function is defined in album-stuff/ui.js as onShowAlbumComments
 };
 
-const showComment = function (data) {
-  console.log(data);
-};
-
-const showSuccess = function () {
-
-};
-
-const onShowError = function () {
-  $('.log').text('Game does not exist');
+const onCreateError = function () {
+  $('.log').text('Comment must be at least one character');
 };
 
 const onPatchSuccess = function () {
@@ -31,6 +15,7 @@ const onPatchSuccess = function () {
 
 const onPostSuccess = function () {
   $(".show-all-albums").click();
+  $('.log').text('Comment Successfully Created');
 
 };
 
@@ -45,12 +30,10 @@ const onUpdateSuccess = function () {
 
 
 module.exports = {
-  showComment,
   showComments,
   onError,
   onPatchSuccess,
   onPostSuccess,
-  showSuccess,
-  onShowError,
+  onCreateError,
   onUpdateSuccess
 };

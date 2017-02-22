@@ -45,25 +45,32 @@ const showSuccess = function () {
 };
 
 const onShowError = function () {
-  $('.log').text('Game does not exist');
-};
-
-const onPatchSuccess = function () {
-
-
+  $('.log').text('This album has no comments');
 };
 
 const onPostSuccess = function () {
   $(".show-all-albums").click();
   $('.create-album-modal').modal('hide');
+  $('.log').text('Successfully Created Album');
+  $('.credential-status').empty();
+  $('input').val('');
 };
 
 const onError = function () {
-
+  $('.log').text('Parameters must be at least 1 character');
 };
 
 const onUpdateSuccess = function () {
   $(".show-all-albums").click();
+  $('.log').text('Album Successfully Updated');
+};
+
+const onDeleteSuccess = function () {
+  $('.log').text('Album Successfully Deleted');
+};
+
+const onCreateError = function() {
+ $('.credential-status').text('Please Try Again: Parameters must contain at least 1 character');
 };
 
 
@@ -72,10 +79,11 @@ module.exports = {
   showAlbum,
   showAlbums,
   onError,
-  onPatchSuccess,
   onPostSuccess,
   showSuccess,
   onShowError,
   onUpdateSuccess,
-  onShowAlbumComments
+  onShowAlbumComments,
+  onDeleteSuccess,
+  onCreateError,
 };

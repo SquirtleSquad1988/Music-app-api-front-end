@@ -1,11 +1,10 @@
 'use strict';
 
-
+$('.log').text('');
 
 const signInSuccess = () => {
-  $('.log').text('Click New Game to Begin');
+  $('.log').text('Create or Edit an Album');
   $('.new').show();
-  $('.credential-status').text('Click New Game to Begin');
   $('#sign-in-dropdown').hide();
   $('#sign-up-dropdown').hide();
   $('#exit').show();
@@ -43,7 +42,7 @@ const passwordChangeFailure = () => {
 };
 
 const signOutSuccess = () => {
-  $('.log').text('Successfully Signed Out. Sign In to Play Again!');
+  $('.log').text('Successfully Signed Out');
   $('.credential-status').text('Please Sign In or Sign Up!');
   $('.content').fadeOut();
   $('#change-password-dropdown').hide();
