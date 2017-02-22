@@ -9,13 +9,30 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   color: red;
 }
 
+.album-info {
+  height: 50px;
+  width: 100%;
+}
+
+.deets {
+  padding: 0 0 0 20px;
+  float: left
+}
+
+.hide-album-comments {
+  float: right;
+}
+
 .fields {
   margin: 0 auto;
-  height: 100px;
+  height: 65%;
   width: 100%;
   border: 1px #000000;
   border-style: none;
-  border-radius: 26px 26px 26px 26px;
+}
+
+.comments {
+  float: right;
 }
 
 .album-item {
@@ -26,7 +43,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 200px;
   width: 50.1%;
   border-style: solid;
-  padding: 20px 0 0;
+  padding: 0px;
   float: left;
 }
 

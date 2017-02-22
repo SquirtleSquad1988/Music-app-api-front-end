@@ -15,34 +15,37 @@
     {{/if}}
   </div> -->
   <div class="album-item">
-    <ul data-id="{{album.id}}">
-      {{album.id}}
-      <li>Artist: {{album.artist_name}}</li>
-        {{#if album.album_name}}
-          <small>Album: {{album.album_name}}</small>
-        {{else}}
-          No description.
-        {{/if}}
-        <div class="fields" data-id="{{album.id}}">
-          <form class="comments" data-id="{{album.id}}">
-            <button type="submit" class="btn btn-default show-album-comments" data-id="{{album.id}}">Get Comments</button>
-          </form>
-          <form class='create-comment hide'>
-            <input type="text" name="comment[comment]" placeholder="Comment Here">
-            <input type="hidden" name="comment[album_id]" value="{{album.id}}">
-            <button type="submit" class="btn btn-default">Create Comment</button>
-          </form>
-          <form class='update-album hide' data-id="{{album.id}}">
-            <div class="form-group">
-              <input type="text" name="album[artist_name]" id="artist-name" placeholder="Artist Name">
-              <input type="text" name="album[album_name]" id="album-name" placeholder="Album Name">
-              <button type="submit" class="btn btn-default refresh" data-id="{{album.id}}">Update Album</button>
-            </div>
-          </form>
-        </div>
-        <div class="album-edits">
-          <span class="edit-album" data-id="{{album.id}}">edit</span> / <span class="comment-album" data-id="{{album.id}}">comment</span> / <span class="del-album" data-id="{{album.id}}">delete</span>
-        </div>
+    <div class="album-info">
+      <ul class="deets" data-id="{{album.id}}">
+        <li>Artist: {{album.artist_name}}</li>
+          {{#if album.album_name}}
+            <small>Album: {{album.album_name}}</small>
+          {{else}}
+            No description.
+          {{/if}}
       </ul>
+      <form class="comments" data-id="{{album.id}}">
+        <button type="submit" class="btn btn-default show-album-comments" data-id="{{album.id}}">Get Comments</button>
+      </form>
+      <button type="button" class="btn btn-default hide-album-comments" data-id="{{album.id}}">Hide Comments</button>
     </div>
+    <div class="fields" data-id="{{album.id}}">
+      <form class='create-comment hide'>
+        <input type="text" name="comment[comment]" placeholder="Comment Here">
+        <input type="hidden" name="comment[album_id]" value="{{album.id}}">
+        <button type="submit" class="btn btn-default">Create Comment</button>
+      </form>
+      <form class='update-album hide' data-id="{{album.id}}">
+        <div class="form-group">
+          <input type="text" name="album[artist_name]" id="artist-name" placeholder="Artist Name">
+          <input type="text" name="album[album_name]" id="album-name" placeholder="Album Name">
+          <button type="submit" class="btn btn-default refresh" data-id="{{album.id}}">Update Album</button>
+        </div>
+      </form>
+      <div class="display-comments" data-id="{{album.id}}"></div>
+    </div>
+    <div class="album-edits">
+      <span class="edit-album" data-id="{{album.id}}">edit album information</span> / <span class="comment-album" data-id="{{album.id}}">comment</span> / <span class="del-album" data-id="{{album.id}}">delete</span>
+    </div>
+  </div>
 {{/each}}

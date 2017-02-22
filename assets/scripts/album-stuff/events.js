@@ -31,9 +31,6 @@ const onShowAlbumComments = function (event) {
 
 const onDeleteAlbum = function(event){
   event.preventDefault();
-  // let bookId = $('#delete-book-id').val();
-  // multiple ways to do everything.
-  // However prefer this way.
   api.destroyAlbum(+$(this).data('id'))
     .then(ui.onDeleteSuccess)
     .catch(ui.onError);

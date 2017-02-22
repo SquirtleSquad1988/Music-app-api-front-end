@@ -6,38 +6,34 @@ const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showAlbums = function (data) {
   // selects the content element and appends new HTML into i
-
-console.log(data);
-
-// showBooksHTML is a string of HTML that is made up
-// of the template showBooksTemplate and the data.albums objects
+  console.log(data);
+  // showBooksHTML is a string of HTML that is made up
+  // of the template showBooksTemplate and the data.albums objects
   // let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
   let showAlbumsHtml = showAlbumsTemplate({ albums: data.albums });
   // selects the content element and appends new HTML into it
   $('.content').empty();
   $('.content').append(showAlbumsHtml).hide().fadeIn();
+  // the function below deletes the album item from the rendered list and
+  // only that item. Have to alter DOM traversal if structure of album-item
+  // is altered
   $("#content").on("click", ".del-album", function (e) {
     e.preventDefault();
-    let albumDescription = $(e.target).parent().parent().parent();
+    let albumDescription = $(e.target).parent().parent();
     albumDescription.fadeOut();
     });
-  // $("#content").on("submit", ".comments", function (e) {
-  //   let where = $(e.target).parent();
-  //   console.log(where);
-  //   where.append(showCommentsHtml);
-  //   });
+  $(".hide-album-comments").hide();
+
 };
 
 const onShowAlbumComments = function (data) {
+
   let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
-  // selects the content element and appends new HTML into it
-  // $("#content").on("click", ".comments", function (e) {
-  //   let where = $(e.target).parent();
-  //   console.log(where);
-  //   where.append(showCommentsHtml);
-  //   });
   let current = data.comments[0].album_id;
-  $(".fields[data-id='" + current +"']").append(showCommentsHtml);
+  $(".display-comments[data-id='" + current +"']").empty();
+  $(".display-comments[data-id='" + current +"']").append(showCommentsHtml);
+  $(".show-album-comments[data-id='" + current +"']").hide();
+  $(".hide-album-comments[data-id='" + current +"']").show();
 };
 
 const showAlbum = function (data) {
@@ -60,7 +56,6 @@ const onPatchSuccess = function () {
 const onPostSuccess = function () {
   $(".show-all-albums").click();
   $('.create-album-modal').modal('hide');
-
 };
 
 const onError = function () {
