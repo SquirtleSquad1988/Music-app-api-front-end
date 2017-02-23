@@ -6,7 +6,6 @@ const showCommentsTemplate = require('../templates/comment-listing.handlebars');
 
 const showAlbums = function (data) {
   // selects the content element and appends new HTML into i
-  console.log(data);
   // showBooksHTML is a string of HTML that is made up
   // of the template showBooksTemplate and the data.albums objects
   // let showCommentsHtml = showCommentsTemplate({ comments: data.comments });
@@ -38,7 +37,6 @@ const onShowAlbumComments = function (data) {
 };
 
 const showAlbum = function (data) {
-  console.log(data);
 };
 
 const showSuccess = function () {
