@@ -9,9 +9,6 @@ h1 {
   text-align: center;
 }
 
-.del-album {
-  color: red;
-}
 
 .log {
   text-align: center;
@@ -43,6 +40,11 @@ ul {
   margin: 3px;
 }
 
+p {
+  font-size: 11px;
+  margin: 0px;
+}
+
 .hide-album-comments {
   float: right;
 }
@@ -69,13 +71,17 @@ ul {
   float: right;
 }
 
+small {
+
+}
+
 .album-item {
   border: 1px black;
   display: block;
   left: 0px;
   margin: 0 auto;
-  height: 200px;
-  width: 30%;
+  height: 400px;
+  width: 25%;
   border-style: solid;
   padding: 0px;
   float: left;
