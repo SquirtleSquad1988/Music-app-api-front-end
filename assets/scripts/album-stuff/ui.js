@@ -34,6 +34,7 @@ const onShowAlbumComments = function (data) {
   $(".display-comments[data-id='" + current +"']").append(showCommentsHtml);
   $(".show-album-comments[data-id='" + current +"']").hide();
   $(".hide-album-comments[data-id='" + current +"']").show();
+  $('.log').text('');
 };
 
 const showAlbum = function (data) {

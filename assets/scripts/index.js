@@ -49,5 +49,5 @@ $(() => {
   $("#content").on("submit", ".update-album", albumEvents.onUpdateAlbum);
   $('.create-comment').on('submit', commentEvents.onCreateComment);
   $('#content').on('submit', '.create-comment', commentEvents.onCreateComment);
-  $('#content').on('submit', '.comments', albumEvents.onShowAlbumComments);
+  $('#content').on('click', '.show-album-comments', albumEvents.onShowAlbumComments);
 });

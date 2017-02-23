@@ -13,10 +13,11 @@
     <!-- Do not add `script` tags unless you know what you are doing -->
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
   </head>
 
   <body class="container-fluid">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand">Alex's Music Reminder App</a>
+          <a class="navbar-brand">Album Wishlist</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -143,6 +144,19 @@
                   </label>
                   <button type="submit" class="btn btn-default">Create Album</button>
                 </fieldset>
+              </form>
+              <div class="credential-status"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade create-comment" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form class='create-comment'>
+                <input type="text" name="comment[comment]" placeholder="Comment Here">
+                <input type="hidden" name="comment[album_id]" value="{{album.id}}">
+                <button type="submit" class="btn btn-default">Create Comment</button>
               </form>
               <div class="credential-status"></div>
             </div>

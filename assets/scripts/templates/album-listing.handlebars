@@ -17,17 +17,11 @@
   <div class="album-item">
     <div class="album-info">
       <ul class="deets" data-id="{{album.id}}">
-        <li>Artist: {{album.artist_name}}</li>
-          {{#if album.album_name}}
-            <small>Album: {{album.album_name}}</small>
-          {{else}}
-            No description.
-          {{/if}}
+        <p>{{album.artist_name}}<p>
+        <p><small>{{album.album_name}}</small></p>
       </ul>
-      <form class="comments" data-id="{{album.id}}">
-        <button type="submit" class="btn btn-default show-album-comments" data-id="{{album.id}}">Get Comments</button>
-      </form>
-      <button type="button" class="btn btn-default hide-album-comments" data-id="{{album.id}}">Hide Comments</button>
+      <span class="label label-success show-album-comments" data-id="{{album.id}}">Show Comments</span>
+      <span class="label label-info hide-album-comments" data-id="{{album.id}}">Hide Comments</span>
     </div>
     <div class="fields" data-id="{{album.id}}">
       <form class='create-comment hide'>
