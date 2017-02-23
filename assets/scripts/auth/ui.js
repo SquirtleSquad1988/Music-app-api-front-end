@@ -12,33 +12,38 @@ const signInSuccess = () => {
   $('.sign-in-modal').modal('hide');
   $(".show-all-albums").click();
   $('.create-new-album').show();
+  $('input').val('');
+  $('.credential-status').val('');
 };
 
 const signInFailure = () => {
-    $('.log').text('Please enter a valid username and password');
-    $('.credential-status').text('Please enter a valid username and password');
+  $('.log').text('Please enter a valid username and password');
+  $('.credential-status').text('Please enter a valid username and password');
 };
 
 const signUpSuccess = () => {
-    $('.log').text('Welcome! Please Sign In!');
-    $('.credential-status').text('Welcome! Please Sign In!');
-    $('.sign-up-modal').modal('hide');
+  $('.log').text('Welcome! Please Sign In!');
+  $('.credential-status').text('Welcome! Please Sign In!');
+  $('.sign-up-modal').modal('hide');
+  $('input').val('');
 };
 
 const signUpFailure = () => {
-    $('.log').text('Please enter a valid username (e.g. name@name) and password (must be 4 or more characters)');
-    $('.credential-status').text('Please enter a valid username (e.g. name@name) and password (must be 4 or more characters)');
+  $('.log').text('Please enter a valid username (e.g. name@name) and password (must be 4 or more characters)');
+  $('.credential-status').text('Please enter a valid username (e.g. name@name) and password (must be 4 or more characters)');
 };
 
 const changePasswordSuccess = () => {
   $('.log').text('Password Successfully Changed');
-  $('.credential-status').text('Password Successfully Changed');
+  $('.credential-status').val('');
   $('.change-password-modal').modal('hide');
+  $('input').val('');
+
 };
 
 const passwordChangeFailure = () => {
-    $('.log').text('Please Try Again');
-    $('.credential-status').text('Please Try Again');
+  $('.log').text('Please Try Again');
+  $('.credential-status').text('Please Try Again');
 };
 
 const signOutSuccess = () => {
