@@ -13,11 +13,17 @@ The following technologies were utilized to make this app: Ruby, Ruby on Rails, 
   
 User Stories:
 *As a user I want to be able to post an album that I dont own so I can save the name of it for later.
+
 As a user I want to be able to post the names of a song I am listening to (that I dont have in my music library) so i can look it up later.
+
 As a user I want the ability to post what I am currently listening to so others can access that information.
+
 *As a user I want the ability to access a list of albums that I saved so I can look them up when I ready to purchase music.
+
 *As a user I want the ability to look up another users list of saved albums so I can see if there is anything that I like in it.
+
 As a user I want to be able to comment on other users saved albums.
+
 *As a user I want to be able to delete albums that I have purchased so I can check what albums I have already bought
 
 Wireframes:
