@@ -13,7 +13,7 @@ const signInSuccess = () => {
   $(".show-all-albums").click();
   $('.create-new-album').show();
   $('input').val('');
-  $('.credential-status').val('');
+  $('.credential-status').text('');
 };
 
 const signInFailure = () => {
