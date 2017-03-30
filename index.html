@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Album Wishlist</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="../../favicon.ico">
+    <!-- Do not add `link` tags unless you know what you are doing -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags unless you know what you are doing -->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+  </head>
+
+  <body class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Album Wishlist</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active create-new-album" data-toggle="modal" data-target=".create-album-modal"><a href="#">Create New Album</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Authorization <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li id="sign-up-dropdown" data-toggle="modal" data-target=".sign-up-modal"><a href="#">Sign Up</a></li>
+                <li id="change-password-dropdown" data-toggle="modal" data-target=".change-password-modal"><a href="#">Change Password</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header"></li>
+                <li id="exit"><a href="#">Sign Out</a></li>
+                <li id="sign-in-dropdown" data-toggle="modal" data-target=".sign-in-modal"><a href="#">Sign In</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="log"></div>
+
+    <div class="top">
+      <div class="authentication">
+        <div class="modal fade sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign up!</legend>
+                  <label>
+                    Email
+                    <input type="text" name="credentials[email]">
+                  </label>
+                  <label>
+                    password
+                    <input type="password" name="credentials[password]">
+                  </label>
+                  <label>
+                    Password Confirmation
+                    <input type="password" name="credentials[password_confirmation]">
+                  </label>
+                  <button type="submit" class="btn btn-default">Sign Up!</button>
+                </fieldset>
+              </form>
+              <div class="credential-status"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Sign in!</legend>
+                  <label>
+                    Email
+                    <input type="text" name="credentials[email]">
+                  </label>
+                  <label>
+                    password
+                    <input type="password" name="credentials[password]">
+                  </label>
+                  <button type="submit" class="btn btn-default">Sign In!</button>
+                </fieldset>
+              </form>
+              <div class="credential-status"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password</legend>
+                  <label>
+                    Email
+                    <input type="text" name="credentials[email]">
+                  </label>
+                  <label>
+                    Old Password
+                    <input type="password" name="passwords[old]">
+                  </label>
+                  <label>
+                    New Password
+                    <input type="password" name="passwords[new]">
+                  </label>
+                  <button type="submit" class="btn btn-default">Change Password</button>
+                </fieldset>
+              </form>
+              <div class="credential-status"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade create-album-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form class='create-album'>
+                <fieldset>
+                  <legend>Create Album</legend>
+                  <label>
+                    Artist Name
+                    <input type="text" name="album[artist_name]" placeholder="Artist Name">
+                  </label>
+                  <label>
+                    Album Name
+                    <input type="text" name="album[album_name]" placeholder="Album Name">
+                  </label>
+                  <button type="submit" class="btn btn-default">Create Album</button>
+                </fieldset>
+              </form>
+              <div class="credential-status"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade create-comment" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form class='create-comment'>
+                <input type="text" name="comment[comment]" placeholder="Comment Here">
+                <input type="hidden" name="comment[album_id]" value="{{album.id}}">
+                <button type="submit" class="btn btn-default">Create Comment</button>
+              </form>
+              <div class="credential-status"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="sign-out" class="hide">
+        <fieldset>
+          <input type="submit" name="submit" value="Sign Out!">
+        </fieldset>
+      </form>
+    </div>
+
+    <form class='albums'>
+      <button type="submit" class="btn btn-default show-all-albums hide">Get Albums</button>
+    </form>
+
+    <div id="content" class="content"></div>
+    <div class="test"></div>
+  </body>
+</html>
